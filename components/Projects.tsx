@@ -1,11 +1,16 @@
 import React from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { Project } from '../sanity/typings'
 
-type Props = {}
+import { urlForImage } from '../lib/sanity.image'
 
-const Projects = (props: Props) => {
-    const projects = ['One', 'Two', 'Three', 'four', 'five']; 
+type Props = {
+    practical: Project[]
+}
+
+const Projects = ({ practical }: Props) => {
+    
   return (
     <motion.div 
         initial={{ opacity: 0 }}
@@ -17,31 +22,32 @@ const Projects = (props: Props) => {
             Projects
         </h3>
 
-        <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20'>
-            {projects.map((project, index) => (
+        <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin'>
+            {practical.map((project, index) => (
                <motion.div
                     initial={{ y: -125, opacity: 0 }}
                     transition={{ duration: 1, delay: 0.5 }}
                     whileInView={{ y: 0, opacity: 1 }}
                     viewport={{ once: true }}
                     className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen'
-                    key={project}
+                    key={project._id}
                >
                    <Image
-                        src='/../public/project-placeholder.png'
+                        src={urlForImage(project.image)?.url()}
                         width={500}
                         height={500}
-                        alt={project}
+                        alt={project.title}
                     />
                     <div className='space-y-10 px-0 md:px-10 max-w-3xl'>
                         <h4 className='text-3xl font-semibold text-center'>
                             <span className='underline decoration-purple-500/50'>
-                                Case Study
+                                Case Study: {index + 1} of {practical.length}
                             </span>
-                            {` ${index + 1}`} of {projects.length}: {project}
+                            {project?.title}
                         </h4>
+                    
                         <p className='text-lg text-center md:text-left'>
-                            lorem ipsum dolor sit amet, consectetur adipiscing elit.lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dolor sit amet, consectetur adipiscing elit.lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            {project.summary}
                         </p>
                     </div>
                </motion.div>

@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply mx-1 px-6 py-2 rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border rounded-full border-purple-500;
+  };
+  .header {
+    @apply absolute top-24 uppercase tracking-[1rem] text-gray-500 text-2xl;
+  }; 
+  .contact-input {
+    @apply outline-none rounded-sm border-b px-4 py-4 text-gray-500 placeholder-gray-300 transition-all focus:border-purple-500 focus:text-gray-500 hover:border-purple-500
+  }
+}

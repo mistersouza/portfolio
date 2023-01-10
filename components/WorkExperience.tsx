@@ -2,10 +2,13 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 import WorkExperienceCard from './WorkExperienceCard'
+import { Experience } from '../sanity/typings'
 
-type Props = {}
+type Props = {
+  work: Experience[]
+}
 
-const WorkExperience = (props: Props) => {
+const WorkExperience = ({ work }: Props) => {
   return (
     <motion.div
         initial={{ opacity: 0 }}
@@ -18,9 +21,9 @@ const WorkExperience = (props: Props) => {
         </h3>
 
         <div className='w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory'>
-          <WorkExperienceCard />
-          <WorkExperienceCard />
-          <WorkExperienceCard />
+          {work.map((experience, index) => (
+            <WorkExperienceCard key={experience._id} experience={experience} />
+          ))}
         </div>
     </motion.div>
   )

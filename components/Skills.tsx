@@ -2,11 +2,15 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Skill from './Skill'
 
-type Props = {}
+import { Skill as Type } from '../sanity/typings'
 
-const Skills = (props: Props) => {
+type Props = {
+    skills: Type[]
+}
+
+const Skills = ({ skills }: Props) => {
   return (
-    <motion.div 
+    <motion.div
         initial={{ opacity: 0 }}    
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1.5 }}
@@ -19,17 +23,14 @@ const Skills = (props: Props) => {
         <p className='absolute top-36 uppercase tracking-[3px] text-gray-500 text-sm'>
             Hover over a skill for proficiency
         </p>
-
         <div className='grid grid-cols-4 gap-5'>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
-            <Skill/>
+            {skills.slice(0, skills.length / 2).map((skill) => (
+                <Skill key={skill._id} skill={skill} />
+            ))}
+
+            {skills.slice(skills.length / 2).map((skill) => (
+                <Skill key={skill._id} skill={skill} direction={'left'}/>
+            ))}
         </div>
     </motion.div>
   )
