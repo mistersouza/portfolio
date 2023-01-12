@@ -6,7 +6,7 @@ import { Experience } from '../../sanity/typings'
 
 const query = groq`*[_type == "experience"] {
     ...,
-    skills[]->
+    technologies[]->
 }`
 
 type Data = {

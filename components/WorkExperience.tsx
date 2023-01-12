@@ -21,7 +21,7 @@ const WorkExperience = ({ work }: Props) => {
         </h3>
 
         <div className='w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory'>
-          {work.map((experience, index) => (
+          {work.map(experience => (
             <WorkExperienceCard key={experience._id} experience={experience} />
           ))}
         </div>

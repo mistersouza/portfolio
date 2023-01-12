@@ -1,8 +1,8 @@
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
-  name: 'pageInfo',
-  title: 'Page Info',
+  name: 'aboutMe',
+  title: 'About Me',
   type: 'document',
   fields: [
     defineField({
@@ -38,17 +38,9 @@ export default defineType({
       ],
     }),
     defineField({
-      name: 'aboutMe',
-      title: 'About Me',
+      name: 'bio',
+      title: 'Bio',
       type: 'string',
-    }),
-    defineField({
-      name: 'profileImage',
-      title: 'Profile Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
     }),
     defineField({
       name: 'phoneNumber',

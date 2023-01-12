@@ -42,9 +42,9 @@ export interface Skill extends SanityDocument {
   title: string
 }
 
-export interface PageInfo extends SanityDocument {
+export interface AboutMe extends SanityDocument {
   heroImage: Image
-  _type: 'pageInfo'
+  _type: 'aboutMe'
   address: string
   aboutMe: string
   email: string

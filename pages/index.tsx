@@ -12,15 +12,15 @@ import Projects from '../components/Projects'
 import Skills from '../components/Skills'
 import WorkExperience from '../components/WorkExperience'
 
-import { Experience, PageInfo, Project, Skill, SocialMedia } from '../sanity/typings'
+import { AboutMe, Experience, Project, Skill, SocialMedia } from '../sanity/typings'
 import { fetchExperiences } from '../utils/fetchExperiences'
 import { fetchSkills } from '../utils/fetchSkills'
 import { fetchProjects } from '../utils/getProjects'
 import { fetchSocialMedia } from '../utils/fetchSocialMedia'
-import { fetchPageInfo } from '../utils/getPageInfo'
+import { fetchAboutMe } from '../utils/fetchAboutMe'
 
 type Props = {
-  pageInfo: PageInfo
+  aboutMe: AboutMe
   experiences: Experience[]
   skills: Skill[]
   projects: Project[]
@@ -28,10 +28,10 @@ type Props = {
 }
 
 export default function Home({ 
+    aboutMe,
     experiences,
     skills,
     socialMedia,
-    pageInfo,
     projects }: Props) {
 
   return (
@@ -44,12 +44,12 @@ export default function Home({
 
       {/* Hero */}
       <section className='snap-start' id="hero">
-        <Hero pageInfo={pageInfo}/>
+        <Hero info={aboutMe}/>
       </section>
 
       {/* About */}
       <section className='snap-center' id='about'>
-        <About pageInfo={pageInfo}/>
+        <About info={aboutMe}/>
       </section>
 
       {/* Work experience */}
@@ -88,18 +88,18 @@ export default function Home({
 
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
+  const aboutMe: AboutMe = await fetchAboutMe(); 
   const experiences: Experience[] = await fetchExperiences()
   const skills: Skill[] = await fetchSkills()
   const socialMedia: SocialMedia[] = await fetchSocialMedia(); 
-  const pageInfo: PageInfo = await fetchPageInfo(); 
   const projects: Project[] = await fetchProjects()
 
   return {
     props: {
+      aboutMe,
       experiences,
       skills,
       socialMedia,
-      pageInfo,
       projects
     }, 
     // revalidate: 1
