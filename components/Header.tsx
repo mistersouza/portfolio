@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { SocialIcon } from 'react-social-icons'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
@@ -10,6 +10,14 @@ type Props = {
 }
 
 function Header({ social }: Props) {
+  const [initialRenderComplete, setInitialRenderComplete] = useState(false);
+
+  useEffect(() => {
+    setInitialRenderComplete(true);
+  }, []);
+
+  if (!initialRenderComplete) return null;
+
   return (
     <header className='flex flex-row justify-between max-w-7xl mx-auto sticky top-0 z-10 xl-items-center p-5'>
         <motion.div 

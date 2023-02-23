@@ -19,7 +19,7 @@ const About = ({ info }: Props) => {
     >
         <h3 className='header'>About</h3>
         <motion.div 
-            className='shrink-0'
+            className='shrink-0 relative'
             initial={{ x: -200, opacity: 0 }}
             transition={{ duration: 1.2 }}
             whileInView={{ x: 0, opacity: 1 }}
