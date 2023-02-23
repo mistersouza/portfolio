@@ -35,5 +35,10 @@ export default defineType({
       title: 'Link to Project',
       type: 'url',
     }),
+    defineField({
+      name: 'alt',
+      type: 'string',
+      title: 'Alternative text',
+    }),
   ],
 })

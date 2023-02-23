@@ -32,7 +32,7 @@ function Header({ social }: Props) {
           <motion.div 
               initial={{ x: 500, opacity: 0, scale: 0.5 }}
               animate={{ x: 0, opacity: 1, scale: 1 }}
-              transition={{ duration: 1.5 }}
+              transition={{ duration: 1.2 }}
               className='flex flex-row items-center text-gray-300 cursor-pointer'>
               {/* Contact me */}
               <SocialIcon

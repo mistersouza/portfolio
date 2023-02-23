@@ -27,7 +27,7 @@ const WorkExperienceCard = ({ experience }: Props) => {
                 src={urlForImage(experience.logo)?.url()}
                 width={200}
                 height={200}
-                alt='Logo'    
+                alt={experience.company} 
             />
         </motion.div>
         <div className='px-0 md:px-10'>
@@ -41,7 +41,7 @@ const WorkExperienceCard = ({ experience }: Props) => {
                         src={urlForImage(technology.icon)?.url()}
                         width={150}
                         height={150}
-                        alt={technology.title}
+                        alt={technology.technology}
                     />    
                 ))}
             </div>

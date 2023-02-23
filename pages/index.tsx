@@ -43,7 +43,7 @@ export default function Home({
       <Header social={socialMedia}/>
 
       {/* Hero */}
-      <section className='snap-start' id="hero">
+      <section className='snap-center' id="hero">
         <Hero info={aboutMe}/>
       </section>
 
@@ -57,7 +57,7 @@ export default function Home({
         <WorkExperience work={experiences} />
       </section>
       {/* Skills */}
-      <section className='snap-start' id='skills'>
+      <section className='snap-center' id='skills'>
         <Skills skills={skills}/>
       </section>
       {/* Projects */}
@@ -66,7 +66,7 @@ export default function Home({
       </section>
       {/* Contact */}
       <section className='snap-center' id='contact'>
-        <Contact />
+        <Contact info={aboutMe}/>
       </section>
 
       <Link href='#hero'>

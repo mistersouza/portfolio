@@ -27,7 +27,7 @@ const Hero = ({ info }: Props) => {
     });
 
   return (
-    <motion.div className='flex flex-col h-screen space-y-8 items-center justify-center text-center overflow-hidden'>
+    <motion.div className='h-screen flex flex-col space-y-8 items-center justify-center text-center overflow-hidden'>
         <Background />
         <Image
             className='relative rounded-full h-32 w-32 mx-auto object-cover'
@@ -35,6 +35,7 @@ const Hero = ({ info }: Props) => {
             alt='Me profile picture'
             width={500}
             height={500}
+            priority={true}
         />
         <div className='flex flex-col z-20'>
             <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[0.5rem]'>{info.role}</h2>

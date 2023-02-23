@@ -43,6 +43,7 @@ export interface Skill extends SanityDocument {
 }
 
 export interface AboutMe extends SanityDocument {
+  [x: string]: any
   heroImage: Image
   _type: 'aboutMe'
   address: string
