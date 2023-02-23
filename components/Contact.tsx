@@ -1,6 +1,6 @@
 import React from 'react'
 import { useForm, SubmitHandler } from "react-hook-form";
-import { DevicePhoneMobileIcon, MapPinIcon, AtSymbolIcon, PaperAirplaneIcon } from '@heroicons/react/24/outline'
+import { DevicePhoneMobileIcon, MapPinIcon, AtSymbolIcon, PaperAirplaneIcon, InformationCircleIcon } from '@heroicons/react/24/outline'
 
 import { AboutMe } from '../sanity/typings'
 
@@ -15,7 +15,7 @@ type Inputs = {
     message: string
 };
 
-const Contact = (info: Props) => {
+const Contact = ({ info }: Props) => {
     const { register, handleSubmit } = useForm<Inputs>();
     const onSubmitClick: SubmitHandler<Inputs> = formData => {
         window.location.href = `mailto:mistersouza@icloud.com?subject=${formData.subject}&body=${formData.message}`
@@ -36,15 +36,15 @@ const Contact = (info: Props) => {
             <div className='space-y-5'>
                 <div className='flex items-center space-x-5 justify-center'>
                     <DevicePhoneMobileIcon className='text-purple-500 h-7 w-7 animate-pulse'/>
-                    <p className='text-2xl'>+49 174 6880037</p>
+                    <p className='text-2xl'>{info.phoneNumber}</p>
                 </div>
                 <div className='flex items-center space-x-5 justify-center'>
                     <MapPinIcon className='text-purple-500 h-7 w-7 animate-pulse'/>
-                    <p className='text-2xl'>Berlin</p>
+                    <p className='text-2xl'>{info.address}</p>
                 </div>
                 <div className='flex items-center space-x-5 justify-center'>
                     <AtSymbolIcon className='text-purple-500 h-7 w-7 animate-pulse'/>
-                    <p className='text-2xl'>mistersouza@icloud.com</p>
+                    <p className='text-2xl'>{info.email}</p>
                 </div>
                 <form 
                     className='flex flex-col space-y-2 mx-auto w-fit'
