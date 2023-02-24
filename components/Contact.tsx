@@ -30,7 +30,7 @@ const Contact = ({ info }: Props) => {
             <h4 className='text-3xl font-semibold xm:hidden'>
                 {'I\'ve got just what you need. '}
                 <span className='underline decoration-purple-500/50'>
-                    Let's talk
+                    Let&apos;s talk
                 </span>
             </h4>
             <div className='space-y-5'>

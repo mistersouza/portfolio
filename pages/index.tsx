@@ -37,7 +37,7 @@ export default function Home({
   return (
     <div className='bg-[#f5f5f5] text-gray-700 h-screen snap-y snap-mandatory overflow-scroll z-0'> 
       <Head>
-        <title>mistersouza's</title>
+        <title>{`${aboutMe.name} - Portfolio`}</title>
       </Head>
       
       <Header social={socialMedia}/> */
@@ -99,6 +99,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       socialMedia,
       projects
     }, 
-    // revalidate: 1
+    revalidate: 1000,
   }
 }

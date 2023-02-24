@@ -10,16 +10,16 @@ interface SanityDocument {
 export interface Experience extends SanityDocument {
   _type: 'experience'
   company: string
-  Logo: SanityImage
+  logo: Image
   dateStarted: date
   dateEnded: date
   isCurrentWork: boolean
   title: string
   points: string[]
-  skills: skill[]
+  technologies: skill[]
 }
 
-export interface Image extends SanityDocument {
+export interface Image {
   _type: 'image'
   asset: {
     _ref: string
@@ -27,32 +27,31 @@ export interface Image extends SanityDocument {
   }
 }
 
-export interface Project extends SanityDocument {
-  _type: 'project'
-  title: string
-  image: SanityImage
-  linkToProject: string
-  skills: Skill[]
-}
-
 export interface Skill extends SanityDocument {
   _type: 'skill'
-  image: SanityImage
+  icon: Image
   progress: number
-  title: string
+  name: string
 }
 
 export interface AboutMe extends SanityDocument {
-  [x: string]: any
-  heroImage: Image
   _type: 'aboutMe'
   address: string
-  aboutMe: string
+  bio: string
   email: string
   role: string
   name: string
   phoneNumber: string
-  profileImage: Image
+  images: Image[]
+}
+
+export interface Project extends SanityDocument {
+  _type: 'project'
+  title: string
+  image: Image
+  linkToProject: string
+  summary: string
+  skills: Skill[]
 }
 
 export interface SocialMedia extends SanityDocument {

@@ -23,10 +23,10 @@ const Skill = ({ skill, direction }: Props) => {
         >
           <Image
             className='w-24 h-24 xl:w-32 xl:h-32 filter group-hover:grayscale transition duration-300 ease-in-out'
-            src={urlForImage(skill.icon)?.url()}
+            src={urlForImage(skill.icon)?.url()!}
             width={100}
             height={100}
-            alt={skill.technology}
+            alt={skill.name}
           />
         </motion.div>
         <div className='w-24 h-24 xl:w-32 xl:h-32 absolute opacity-0 group-hover:opacity-80 transition duration-300 ease-in-out group-hover:bg-white z-0'>

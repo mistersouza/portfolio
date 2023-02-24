@@ -31,7 +31,7 @@ const Hero = ({ info }: Props) => {
         <Background />
         <Image
             className='relative rounded-full h-32 w-32 mx-auto object-cover'
-            src={urlForImage(info?.images[0]).url()}
+            src={urlForImage(info?.images[0])?.url()!}
             alt='Me profile picture'
             width={500}
             height={500}

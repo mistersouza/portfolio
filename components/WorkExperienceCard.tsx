@@ -24,7 +24,7 @@ const WorkExperienceCard = ({ experience }: Props) => {
         >
             <Image 
                 className='w-32 h-32 rounded-full md:rounded-full xl:w-[200px] xl:h-[200px] object-cover object-center'
-                src={urlForImage(experience.logo)?.url()}
+                src={urlForImage(experience.logo)?.url()!}
                 width={200}
                 height={200}
                 alt={experience.company} 
@@ -38,10 +38,10 @@ const WorkExperienceCard = ({ experience }: Props) => {
                      <Image
                         className='h-10 w-10 object-cover object-center'
                         key={technology._id}
-                        src={urlForImage(technology.icon)?.url()}
+                        src={urlForImage(technology.icon)?.url()!}
                         width={150}
                         height={150}
-                        alt={technology.technology}
+                        alt={technology.name}
                     />    
                 ))}
             </div>

@@ -33,7 +33,7 @@ const Projects = ({ practical }: Props) => {
                     key={project._id}
                >
                    <Image
-                        src={urlForImage(project.image)?.url()}
+                        src={urlForImage(project.image)?.url()!}
                         width={500}
                         height={500}
                         alt={project.title}
