@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { groq } from 'next-sanity'
-import { sanityClient } from '../../lib/sanity.api'
+import { sanityClient } from '../../sanity/lib/sanity.api'
 import { AboutMe } from '../../sanity/typings'
 
 const query = groq`*[_type == "aboutMe"][0]`

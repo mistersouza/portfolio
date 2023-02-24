@@ -38,10 +38,11 @@ function Header({ social }: Props) {
 
         <Link href='#contact'>
           <motion.div
+              className='flex flex-row items-center text-gray-300 cursor-pointer'
               initial={{ x: 500, opacity: 0, scale: 0.5 }}
               animate={{ x: 0, opacity: 1, scale: 1 }}
               transition={{ duration: 1.2 }}
-              className='flex flex-row items-center text-gray-300 cursor-pointer'>
+            >
               {/* Contact me */}
               <SocialIcon
                   network='email'

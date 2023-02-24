@@ -40,31 +40,28 @@ export default function Home({
         <title>mistersouza's</title>
       </Head>
       
-      <Header social={socialMedia}/>
+      <Header social={socialMedia}/> */
 
-      {/* Hero */}
       <section className='snap-center' id="hero">
         <Hero info={aboutMe}/>
       </section>
 
-      {/* About */}
       <section className='snap-center' id='about'>
         <About info={aboutMe}/>
       </section>
 
-      {/* Work experience */}
       <section className='snap-center' id='experience'>
         <WorkExperience work={experiences} />
       </section>
-      {/* Skills */}
+      
       <section className='snap-center' id='skills'>
         <Skills skills={skills}/>
       </section>
-      {/* Projects */}
+      
       <section className='snap-center' id='projects'>
         <Projects practical={projects}/>
       </section>
-      {/* Contact */}
+      
       <section className='snap-center' id='contact'>
         <Contact info={aboutMe}/>
       </section>

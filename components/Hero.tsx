@@ -8,7 +8,7 @@ import Background from './Background';
 
 import { AboutMe } from '../sanity/typings'
 
-import { urlForImage } from '../lib/sanity.image'
+import { urlForImage } from '../sanity/lib/sanity.image'
 
 type Props = {
     info: AboutMe

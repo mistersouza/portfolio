@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Project } from '../sanity/typings'
 
-import { urlForImage } from '../lib/sanity.image'
+import { urlForImage } from '../sanity/lib/sanity.image'
 
 type Props = {
     practical: Project[]

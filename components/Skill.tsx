@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 import { Skill } from '../sanity/typings'
-import { urlForImage } from '../lib/sanity.image'
+import { urlForImage } from '../sanity/lib/sanity.image'
 
 type Props = {
   skill: Skill
